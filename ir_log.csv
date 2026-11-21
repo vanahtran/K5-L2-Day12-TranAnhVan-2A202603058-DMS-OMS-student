@@ -1,0 +1,7 @@
+frame_id,source,phenomenon,affected_field,effect_on_label
+S01_ir,IR_sim,"Áo tối màu chìm vào nền ghế sau do mất màu sắc viền dây an toàn mờ nhạt",seatbelt,"giữ unknown; không suy đoán từ ảnh RGB cùng cảnh"
+S03_ir,IR_sim,"Mất thông tin màu sắc của ba lô trở thành mảng xám tiệp màu với đệm ghế",object.type,"phải dựa vào phom dáng quai đeo và góc bo vải mềm để gán type=bag"
+S06_ir,IR_sim,"Nôi em bé bằng nhựa phản xạ ánh sáng giả lập đều màu không thấy rõ nhãn hiệu",infant_seat.facing,"dựa vào góc đặt quai xách cong hướng về phía sau để xác định facing=rear"
+D01,real_IR,"Đèn LED NIR phản xạ tạo đốm lóa sáng (glare) trắng rực trên tròng kính che khuất con ngươi",eye_left,"gán unknown; không võ đoán mắt mở dưới đốm lóa"
+D03,real_IR,"Tròng kính râm tối màu bị tia hồng ngoại NIR 940nm xuyên thấu thấy khe mắt",glasses,"vẫn gán glasses=sun (kính râm thực tế) không nhầm sang kính cận clear"
+D04,real_IR,"Da tay và chất liệu vô lăng có độ phản xạ NIR tương đồng tạo độ tương phản thấp",hand.on_wheel,"phóng to kiểm tra khe hở ngón tay để xác định tay rời vô lăng gán on_wheel=no"
