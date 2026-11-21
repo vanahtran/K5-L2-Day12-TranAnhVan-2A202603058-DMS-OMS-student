@@ -1,0 +1,7 @@
+﻿image,label,field,issue,mine,peer,verdict,guideline_rule,action
+D02.png,face,glasses,khác giá trị (IoU=1.00),none,clear,mine,4.5,Giữ none vì tài xế không đeo kính trên mặt (kính để ngoài không tính)
+D04.png,hand,on_wheel,khác giá trị (IoU=1.00),no,yes,mine,4.7,Giữ no vì xe tự lái thử nghiệm tay tài xế buông rời vô lăng
+D04.png,hand,on_wheel,khác giá trị (IoU=1.00),no,yes,mine,4.7,Giữ no cho tay còn lại vì không chạm vô lăng theo quy tắc 4.7
+D06.png,face,gaze_zone,khác giá trị (IoU=1.00),road,lap,peer,4.5,Đồng thuận theo peer đổi thành lap vì đầu và mắt tài xế cúi nhìn xuống đùi
+S01_rgb.png,child_seat,seat,khác giá trị (IoU=1.00),rear_right,rear_left,mine,4.4-3,Giữ rear_right vì camera nhìn ngược nên trái ảnh là rear_right theo xe
+S03_ir.png,object,type,khác giá trị (IoU=1.00),bag,box,mine,4.8,Giữ bag vì vật có quai đeo và viền vải mềm của ba lô
