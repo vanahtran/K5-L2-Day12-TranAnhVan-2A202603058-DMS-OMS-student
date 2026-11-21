@@ -1,7 +1,56 @@
-﻿image,label,field,issue,mine,peer,verdict,guideline_rule,action
-D02.png,face,glasses,khác giá trị (IoU=1.00),none,clear,mine,4.5,Giữ none vì tài xế không đeo kính trên mặt (kính để ngoài không tính)
-D04.png,hand,on_wheel,khác giá trị (IoU=1.00),no,yes,mine,4.7,Giữ no vì xe tự lái thử nghiệm tay tài xế buông rời vô lăng
-D04.png,hand,on_wheel,khác giá trị (IoU=1.00),no,yes,mine,4.7,Giữ no cho tay còn lại vì không chạm vô lăng theo quy tắc 4.7
-D06.png,face,gaze_zone,khác giá trị (IoU=1.00),road,lap,peer,4.5,Đồng thuận theo peer đổi thành lap vì đầu và mắt tài xế cúi nhìn xuống đùi
-S01_rgb.png,child_seat,seat,khác giá trị (IoU=1.00),rear_right,rear_left,mine,4.4-3,Giữ rear_right vì camera nhìn ngược nên trái ảnh là rear_right theo xe
-S03_ir.png,object,type,khác giá trị (IoU=1.00),bag,box,mine,4.8,Giữ bag vì vật có quai đeo và viền vải mềm của ba lô
+﻿﻿image,label,field,issue,mine,peer,verdict,guideline_rule,action
+D01.png,face,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,mine,4.4-5,Hộp face của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D01.png,person,seatbelt,khác giá trị (IoU=0.71),worn_correct,unknown,mine,4.7,Mine đúng vì thấy rõ dải dây vắt chéo từ vai xuống hông đối diện gán worn_correct
+D01.png,face13,count,khác số skeleton,1,0,peer,4.6,"Peer đúng vì tài xế quay đầu che hết mặt, theo 4.6 không thấy mặt thì không vẽ face13; mine đã bỏ ở v2"
+D02.png,hand,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,mine,4.4-5,Hộp hand của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D02.png,face,gaze_zone,khác giá trị (IoU=0.80),road,other,mine,4.5,"Mine đúng vì hướng nhìn rõ ràng (road), peer gán other là chưa chi tiết"
+D03.png,face,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,mine,4.4-5,Hộp face của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D03.png,hand,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,mine,4.4-5,Hộp hand của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D03.png,phone,box,chỉ có ở peer (hoặc IoU thấp),,,mine,4.4-5,Hộp phone của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D03.png,hand,box,chỉ có ở peer (hoặc IoU thấp),,,mine,4.4-5,Hộp hand của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D03.png,face13,count,khác số skeleton,1,0,mine,4.4-1,Thống nhất theo giá trị mine=1 phù hợp guideline
+D04.png,face,eye_right,khác giá trị (IoU=0.81),open,unknown,mine,4.5,Mine đúng vì quan sát kỹ khe mắt trên ảnh độ phân giải cao gán open
+D04.png,face,gaze_zone,khác giá trị (IoU=0.81),road,other,mine,4.5,"Mine đúng vì hướng nhìn rõ ràng (road), peer gán other là chưa chi tiết"
+D04.png,phone,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.42,,mine,4.4-5,Hộp phone của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D04.png,phone,box,chỉ có ở peer (hoặc IoU thấp),,,mine,4.4-5,Hộp phone của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+D05.png,face,eye_left,khác giá trị (IoU=0.92),closed,open,mine,4.5,Mine đúng vì quan sát kỹ khe mắt trên ảnh độ phân giải cao gán closed
+D05.png,face,gaze_zone,khác giá trị (IoU=0.92),center,lap,peer,4.5,"Đồng thuận thảo luận hướng nhìn: mine=center, peer=lap"
+D05.png,face13,right_eye_outer.occluded,khác cờ,1,0,mine,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_outer.outside,khác cờ,0,1,peer,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_inner.occluded,khác cờ,1,0,mine,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_inner.outside,khác cờ,0,1,peer,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_upper.occluded,khác cờ,1,0,mine,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_upper.outside,khác cờ,0,1,peer,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_lower.occluded,khác cờ,1,0,mine,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,right_eye_lower.outside,khác cờ,0,1,peer,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,mouth_right.outside,khác cờ,0,1,peer,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D05.png,face13,lip_lower.occluded,khác cờ,0,1,mine,4.6,Thống nhất cờ keypoint: điểm bị sống mũi/má che khuất hẳn đánh cờ outside=1
+D06.png,face,gaze_zone,khác giá trị (IoU=0.67),road,other,mine,4.5,"Mine đúng vì hướng nhìn rõ ràng (road), peer gán other là chưa chi tiết"
+S01_ir.png,object,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.45,,mine,4.4-5,Hộp object của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+S01_ir.png,object,box,chỉ có ở peer (hoặc IoU thấp),,,mine,4.4-5,Hộp object của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+S01_rgb.png,person,seatbelt,khác giá trị (IoU=0.87),not_worn,unknown,mine,4.7,SVIRO không ai thắt dây nên not_worn/unknown; mine và peer đều tuân thủ nguyên tắc không đoán
+S01_rgb.png,object,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.41,,mine,4.4-5,Hộp object của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+S01_rgb.png,object,box,chỉ có ở peer (hoặc IoU thấp),,,mine,4.4-5,Hộp object của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+S02_ir.png,child_seat,seat,khác giá trị (IoU=0.98),rear_middle,driver,mine,4.4-3,"Mine đúng vì child_seat ở ghế sau (rear_middle), peer quên sửa giá trị mặc định driver của CVAT"
+S02_rgb.png,frame_meta,light,khác giá trị,day,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S02_rgb.png,child_seat,seat,khác giá trị (IoU=0.97),rear_middle,driver,mine,4.4-3,"Mine đúng vì child_seat ở ghế sau (rear_middle), peer quên sửa giá trị mặc định driver của CVAT"
+S03_ir.png,child_seat,occupied,khác giá trị (IoU=0.95),unknown,no,mine,4.8,Ghế trẻ em không thấy rõ bên trong gán unknown theo luật không thấy thì unknown 4.4-1
+S03_ir.png,infant_seat,seat,khác giá trị (IoU=0.97),rear_middle,driver,mine,4.4-3,"Mine đúng vì infant_seat ở ghế sau (rear_middle), peer quên sửa giá trị mặc định driver của CVAT"
+S03_rgb.png,frame_meta,light,khác giá trị,night,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S03_rgb.png,child_seat,occupied,khác giá trị (IoU=0.92),unknown,no,mine,4.8,Ghế trẻ em không thấy rõ bên trong gán unknown theo luật không thấy thì unknown 4.4-1
+S03_rgb.png,infant_seat,box,chỉ có ở mine (hoặc IoU thấp),IoU=0.00,,mine,4.4-5,Hộp infant_seat của mine ôm sát mép đối tượng hơn theo chuẩn IoU
+S04_rgb.png,frame_meta,light,khác giá trị,day,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S05_ir.png,infant_seat,seat,khác giá trị (IoU=0.98),rear_right,driver,mine,4.4-3,"Mine đúng vì infant_seat ở ghế sau (rear_right), peer quên sửa giá trị mặc định driver của CVAT"
+S05_rgb.png,frame_meta,light,khác giá trị,day,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S05_rgb.png,infant_seat,seat,khác giá trị (IoU=0.97),rear_right,driver,mine,4.4-3,"Mine đúng vì infant_seat ở ghế sau (rear_right), peer quên sửa giá trị mặc định driver của CVAT"
+S06_rgb.png,frame_meta,light,khác giá trị,night,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S07_ir.png,infant_seat,facing,khác giá trị (IoU=0.99),front,rear,mine,4.8,Mine đúng vì hướng quai xách và phom nôi cong xác định facing=front
+S07_ir.png,infant_seat,seat,khác giá trị (IoU=0.99),rear_right,driver,mine,4.4-3,"Mine đúng vì infant_seat ở ghế sau (rear_right), peer quên sửa giá trị mặc định driver của CVAT"
+S07_rgb.png,frame_meta,light,khác giá trị,day,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S07_rgb.png,infant_seat,facing,khác giá trị (IoU=0.99),front,rear,mine,4.8,Mine đúng vì hướng quai xách và phom nôi cong xác định facing=front
+S07_rgb.png,infant_seat,seat,khác giá trị (IoU=0.99),rear_right,driver,mine,4.4-3,"Mine đúng vì infant_seat ở ghế sau (rear_right), peer quên sửa giá trị mặc định driver của CVAT"
+S08_ir.png,infant_seat,facing,khác giá trị (IoU=1.00),rear,front,mine,4.8,Mine đúng vì hướng quai xách và phom nôi cong xác định facing=rear
+S08_ir.png,child_seat,occupied,khác giá trị (IoU=0.98),unknown,no,mine,4.8,Ghế trẻ em không thấy rõ bên trong gán unknown theo luật không thấy thì unknown 4.4-1
+S08_rgb.png,frame_meta,light,khác giá trị,day,unknown,peer,4.1,Peer đúng vì SVIRO là ảnh dựng 3D quy chuẩn light=unknown; mine đã sửa ở bản export_final_v2.zip
+S08_rgb.png,infant_seat,facing,khác giá trị (IoU=0.99),rear,front,mine,4.8,Mine đúng vì hướng quai xách và phom nôi cong xác định facing=rear
+S08_rgb.png,child_seat,occupied,khác giá trị (IoU=0.97),unknown,no,mine,4.8,Ghế trẻ em không thấy rõ bên trong gán unknown theo luật không thấy thì unknown 4.4-1
