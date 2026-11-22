@@ -10,7 +10,7 @@ Loại lỗi: `seat_flip`, `wrong_class`, `guess`, `box`, `missing`, `extra`, `l
 |---|---|---|---|---|
 | S01_rgb.png | child_seat (ghế trái ảnh) | `ok` | Gán chuẩn seat=rear_right theo xe, không bị lật theo góc nhìn màn hình | Rồi |
 | S02_rgb.png | frame_meta | `guess` | Ban đầu để light=day theo cảm quan ảnh màu, bạn Hữu để unknown đúng chuẩn ảnh 3D SVIRO; đã đổi về unknown | Rồi (ở v2) |
-| D01.png | face13 | `extra` | Mặt quay đi bị che khuất hết điểm, vẽ skeleton có toàn bộ điểm outside=1; bạn Hữu không vẽ; đã bỏ skeleton chỉ giữ box face | Rồi (ở v2) |
+| D01.png | face13 & seatbelt | `extra` / `guess` | Mặt quay đi bị che khuất hết điểm nhưng vẫn vẽ skeleton; tay đang kéo dây chưa cài đã gán worn_correct; bạn Hữu góp ý rất chuẩn; đã bỏ skeleton và đổi thành unknown | Rồi (ở v2) |
 | D04.png | hand | `ok` | Cả hai tay buông rời vô lăng, gán đúng on_wheel=no theo đặc thù xe tự lái thử nghiệm | Rồi |
 
 ## 2. Lỗi mình lặp lại nhiều nhất hôm nay
@@ -23,6 +23,6 @@ Lần sau tránh bằng cách: Đọc kỹ các ràng buộc đặc thù của t
 
 ## 3. Ghi chú về disagreement_log
 
-Một dòng bạn của mình đúng và mình sai: Ở khung hình `D01.png`, bạn Hữu không vẽ skeleton `face13` vì tài xế quay đầu che khuất toàn bộ mặt, còn mình vẫn vẽ một skeleton và bật cờ `outside=1` cho toàn bộ 13 điểm (bị script check cảnh báo). Đối chiếu Guideline §4.6 ("không thấy mặt thì không vẽ skeleton"), bạn Hữu hoàn toàn đúng và mình đã sửa lại ở bản `export_final_v2.zip`.
+Một dòng bạn của mình đúng và mình sai: Ở khung hình `D01.png`, bạn Hữu không vẽ skeleton `face13` vì tài xế quay đầu che khuất toàn bộ mặt, đồng thời bạn Hữu chỉ ra rằng tài xế mới chỉ đang kéo dây cài chứ chưa cài khóa nên phải để `seatbelt = unknown`. Ban đầu mình vẫn vẽ skeleton và gán `worn_correct`. Đối chiếu Guideline §4.6 ("không thấy mặt thì không vẽ skeleton") và §4.7 ("không gán worn_correct chỉ vì thấy dải dây chéo"), bạn Hữu hoàn toàn đúng và mình đã tiếp thu sửa lại ở bản `export_final_v2.zip`.
 
-Mình học được gì từ dòng đó: Khi gán nhãn keypoints/skeleton, nếu đối tượng bị che khuất hoàn toàn hoặc không thể xác định vị trí giải phẫu thì nguyên tắc đúng là không vẽ skeleton để tránh đưa nhiễu vào mô hình, thay vì vẽ khung xương rỗng rồi bật cờ outside cho tất cả.
+Mình học được gì từ dòng đó: Khi gán nhãn cho xe tự hành, nguyên tắc an toàn hàng đầu là bám sát bằng chứng quan sát thực tế — không vẽ khung xương rỗng gây nhiễu mốc giải phẫu cho model và không suy đoán trạng thái an toàn (thắt dây) khi thao tác chưa hoàn tất.

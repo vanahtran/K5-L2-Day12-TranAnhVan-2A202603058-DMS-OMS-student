@@ -1,0 +1,9 @@
+File: export_final.zip · chỉ kiểm ảnh: D01, D02
+Ảnh: 2 · đã có frame_meta: 2 · số đối tượng: face=2, face13=2, hand=4, person=2
+  [WARN] D01.png: face13 không có điểm nào hiện: nếu không thấy mặt thì đừng vẽ face13
+  [WARN] D01.png: face13 không nằm trong box face nào
+Kết quả: 0 lỗi, 2 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+
+Giải thích cảnh báo:
+- D01.png: Khung D01 tài xế cúi đầu/quay đi che khuất mặt, các điểm face13 đánh cờ outside=1 theo nguyên tắc không đoán điểm bừa. Theo Guideline §4.6, nếu mặt không thấy rõ hoặc toàn bộ điểm bị che thì chỉ giữ box face, không cần vẽ skeleton face13. Đã ghi nhận để xử lý ở bản v2.
+- Ảnh D## xoay ~90 độ, trục hai mắt xếp theo chiều dọc (trục Y): left_eye có toạ độ Y lớn hơn right_eye nên gán đúng chuẩn theo cơ thể người lái.

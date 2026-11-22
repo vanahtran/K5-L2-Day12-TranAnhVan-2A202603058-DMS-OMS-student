@@ -1,0 +1,16 @@
+File: export_final.zip
+Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=8, face=10, face13=6, hand=12, infant_seat=12, object=6, person=10, phone=1
+  [WARN] D01.png: face13 không có điểm nào hiện: nếu không thấy mặt thì đừng vẽ face13
+  [WARN] D01.png: face13 không nằm trong box face nào
+  [WARN] S02_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+  [WARN] S03_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+  [WARN] S04_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+  [WARN] S05_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+  [WARN] S06_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+  [WARN] S07_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+  [WARN] S08_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
+Kết quả: 0 lỗi, 9 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+
+Giải thích cảnh báo:
+- D01.png [face13]: Khung D01 tài xế quay đầu nghiêng khuất toàn bộ mặt nên các điểm face13 đều bật cờ outside=1. Theo Guideline §4.6, ca này chỉ cần giữ box face, không cần vẽ skeleton face13. Đã lược bỏ skeleton này ở bản export_final_v2.zip.
+- S02_rgb.png đến S08_rgb.png [light]: Các ảnh RGB của SVIRO ban đầu được gán light='day' theo cảm quan ánh sáng màu. Theo Guideline §4.1, ảnh mô phỏng 3D không có giờ thực nên quy chuẩn là light='unknown'. Đã đồng bộ sang 'unknown' ở bản export_final_v2.zip.
